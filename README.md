@@ -46,12 +46,12 @@ Finally, I required that any character set of the allowed characters without the
 ### Name Validation
 In testing, when a cross-site scripting or a SQL injection attack was attempted, the result was caught as invalid and not processed. When processed against a list of randomly generated names, all of the names proved to pass as valid, including many foreign and accented names. However, due to the way unicode was read in, certain random characters would not be processed. Overall, the validation process is flawed for universal names, but does accomplish its goals.<br>
 
-**Pros:**
+#### Pros
 - Allow Names with Various Symbols<br>
 - Allow diverse/foreign names<br>
 - No restrictions on family names<br>
 - No restrictions on ordering<br>
-**Cons:**<br>
+#### Cons
 - Errors with Unicode processing<br>
 - Vague enough to allow some unknown malicious content to be injected<br>
 
@@ -59,11 +59,11 @@ In testing, when a cross-site scripting or a SQL injection attack was attempted,
 ### Phone Number Validation
   In testing, all obviously incorrect phone numbers, such as those without numbers, too few numbers, and too many numbers showed up as incorrect. As more precise testing was done, the program proved to be able to handle most common uses of splitting up the numbers, such as parentheses, dashes, spaces, and periods. However, when these characters are more sporadically placed, thus abandoning common practice, the program can only read them as invalid numbers. Additionally, the program cannot recognize invalid area codes, or whether the area code corresponds correctly to the country. It can only work on vague principles. However, assuming the numbers themselves are written correctly, the program can handle most different valid and invalid number formats. <br>
 
-**Pros:**
+#### Pros
 - A wide variety of country’s phone numbers can be accepted<br>
 - Extensions and different countries are accepted<br>
-- Commonly used formats are accepted<br>
-**Cons:**<br>
+- Commonly used formats are accepted
+#### Cons
 - Invalid area and country codes will not be detected<br>
 - Doesn’t recognize number combinations that do not exist<br>
 - Can’t distinguish between the same number but with different seperations<br>
@@ -89,7 +89,7 @@ L33t Hacker : ,+8618980642709<br>
 select * from users; : 011 123 123 1234<br>
 k@tielkazzo : 011 1 703 111 1234<br>
 xxx@xxx.xxx’ OR 1 = 1 LIMIT 1 — ‘ ] : +212-456-7899<br>
-## Invalid Phone Number
+### Invalid Phone Number
 Juan García Reyes : 123<br>
 Rodriguez y Calderón, Carla : <script>alert(“XSS”)</script><br>
 Marc-André ter Stegen : +01 (703) 123-1234<br>
