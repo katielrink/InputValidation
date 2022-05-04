@@ -1,0 +1,2 @@
+# InputValidation
+This project creates a command-line driven telephone listing program, which can store the full names of the users, as well as their telephone numbers. Each input of the name and the telephone number is validated against a preset RegEx to prevent invalid data from being entered into the database. The information is then stored in a simplified method to enable easier searching access later.
